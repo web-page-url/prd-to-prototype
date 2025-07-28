@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react';
 import { Download, Loader2, AlertCircle } from 'lucide-react';
 import { generateContent } from '@/lib/gemini';
+import DotGrid from '@/components/DotGrid';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -147,23 +148,39 @@ Generate the complete HTML prototype now:`;
   };
 
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 text-black flex flex-col relative overflow-hidden">
+      {/* Interactive Background */}
+      <div className="absolute inset-0 z-0">
+        <DotGrid
+          dotSize={6}
+          gap={25}
+          baseColor="#e2e8f0"
+          activeColor="#3b82f6"
+          proximity={100}
+          shockRadius={150}
+          shockStrength={3}
+          resistance={500}
+          returnDuration={1.0}
+          className="w-full h-full opacity-60"
+        />
+      </div>
+
       {/* Header */}
-      <header className="p-8 text-center border-b border-gray-200">
-        <h1 className="text-4xl font-bold mb-2">PRD to Prototype</h1>
-        <p className="text-gray-600 text-lg">
+      <header className="relative z-10 p-8 text-center border-b border-white/20 backdrop-blur-sm bg-white/10">
+        <h1 className="text-4xl font-bold mb-2 text-gray-800">PRD to Prototype</h1>
+        <p className="text-gray-700 text-lg">
           Transform your Product Requirements Document into a working prototype
         </p>
       </header>
 
       {/* Main Container */}
-      <div className="flex-1 flex flex-col p-8 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 flex-1 flex flex-col p-8 max-w-7xl mx-auto w-full">
 
         {/* Input Section */}
         {!isLoading && !showPreview && (
           <div className="space-y-8">
             {/* Text Input Option */}
-            <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-8">
+            <div className="bg-white/70 backdrop-blur-md border-2 border-white/30 rounded-xl p-8 shadow-xl">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-semibold">Enter Your PRD Text</h2>
                 <button
@@ -272,8 +289,8 @@ Build a task management application...
 
         {/* Enhanced Loading Section */}
         {isLoading && (
-          <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
-            <div className="text-center max-w-md mx-auto px-6">
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center max-w-md mx-auto px-6 bg-white/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/30">
               {/* Animated Logo/Icon */}
               <div className="relative mb-8">
                 <div className="w-20 h-20 mx-auto relative">
@@ -341,7 +358,7 @@ Build a task management application...
 
         {/* Error Display */}
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded mb-8 flex items-center gap-2">
+          <div className="bg-red-50/80 backdrop-blur-md border border-red-200/50 text-red-700 p-4 rounded-xl mb-8 flex items-center gap-2 shadow-lg">
             <AlertCircle className="w-5 h-5" />
             {error}
           </div>
@@ -350,7 +367,7 @@ Build a task management application...
         {/* Preview Section */}
         {showPreview && (
           <div className="flex-1 min-h-[600px]">
-            <div className="border border-gray-200 rounded-lg overflow-hidden h-full flex flex-col">
+            <div className="border border-white/30 rounded-xl overflow-hidden h-full flex flex-col bg-white/70 backdrop-blur-md shadow-xl">
               <div className="bg-gray-50 p-4 border-b border-gray-200 flex justify-between items-center">
                 <span className="font-semibold">Generated Prototype</span>
                 <button
@@ -383,7 +400,7 @@ Build a task management application...
                 setGeneratedHTML('');
                 setPrdContent('');
               }}
-              className="bg-gray-200 text-black px-6 py-2 rounded hover:bg-gray-300 transition-colors"
+              className="bg-white/70 backdrop-blur-md text-gray-800 px-6 py-2 rounded-xl hover:bg-white/90 transition-all duration-200 border border-white/30 shadow-lg"
             >
               Create Another Prototype
             </button>
