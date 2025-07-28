@@ -9,8 +9,25 @@ export default function Home() {
   const [generatedHTML, setGeneratedHTML] = useState('');
   const [showPreview, setShowPreview] = useState(false);
   const [prdContent, setPrdContent] = useState('');
-  
+  const [loadingStep, setLoadingStep] = useState(0);
+
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const loadingSteps = [
+    { text: "🔍 Analyzing your requirements...", duration: 1000 },
+    { text: "📋 Understanding your product vision...", duration: 1200 },
+    { text: "🎨 Crafting the perfect design...", duration: 1500 },
+    { text: "🏗️ Architecting the structure...", duration: 1100 },
+    { text: "⚡ Building interactive components...", duration: 1200 },
+    { text: "🎯 Optimizing user experience...", duration: 1000 },
+    { text: "🔧 Implementing functionality...", duration: 1300 },
+    { text: "📱 Making it mobile-responsive...", duration: 800 },
+    { text: "🎪 Adding animations and transitions...", duration: 900 },
+    { text: "🔒 Ensuring accessibility compliance...", duration: 1000 },
+    { text: "✨ Adding final touches...", duration: 1000 },
+    { text: "🧪 Testing across devices...", duration: 800 },
+    { text: "🚀 Almost ready to launch...", duration: 500 }
+  ];
 
   const generatePrototype = async () => {
     if (!prdContent.trim()) {
@@ -20,6 +37,17 @@ export default function Home() {
 
     setIsLoading(true);
     setError('');
+    setLoadingStep(0);
+
+    // Start the loading animation
+    const stepInterval = setInterval(() => {
+      setLoadingStep(prev => {
+        if (prev < loadingSteps.length - 1) {
+          return prev + 1;
+        }
+        return prev;
+      });
+    }, 1500);
 
     try {
       const contentToProcess = prdContent;
@@ -44,34 +72,51 @@ ${contentToProcess}
 Generate the complete HTML prototype now:`;
 
       const response = await generateContent(prompt);
-      
+
       let cleanHTML = response.trim();
-      
+
       if (cleanHTML.startsWith('```html')) {
         cleanHTML = cleanHTML.replace(/^```html\n/, '').replace(/\n```$/, '');
       } else if (cleanHTML.startsWith('```')) {
         cleanHTML = cleanHTML.replace(/^```\n/, '').replace(/\n```$/, '');
       }
-      
+
       setGeneratedHTML(cleanHTML);
       renderPrototype(cleanHTML);
       setShowPreview(true);
-      
+
     } catch (error) {
       console.error('Error:', error);
       setError('Error generating prototype. Please check your API key and try again.');
     } finally {
+      clearInterval(stepInterval);
       setIsLoading(false);
+      setLoadingStep(0);
     }
   };
 
   const renderPrototype = (html: string) => {
     if (iframeRef.current) {
-      const iframeDoc = iframeRef.current.contentDocument || iframeRef.current.contentWindow?.document;
-      if (iframeDoc) {
-        iframeDoc.open();
-        iframeDoc.write(html);
-        iframeDoc.close();
+      try {
+        const iframe = iframeRef.current;
+
+        // Method 1: Use srcdoc attribute (more reliable)
+        iframe.srcdoc = html;
+
+        // Method 2: Fallback to document.write
+        setTimeout(() => {
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+          if (iframeDoc && !iframe.srcdoc) {
+            iframeDoc.open();
+            iframeDoc.write(html);
+            iframeDoc.close();
+          }
+        }, 100);
+
+        console.log('Prototype rendered successfully');
+      } catch (error) {
+        console.error('Error rendering prototype:', error);
+        setError('Failed to render prototype. Please try again.');
       }
     }
   };
@@ -113,7 +158,7 @@ Generate the complete HTML prototype now:`;
 
       {/* Main Container */}
       <div className="flex-1 flex flex-col p-8 max-w-7xl mx-auto w-full">
-        
+
         {/* Input Section */}
         {!isLoading && !showPreview && (
           <div className="space-y-8">
@@ -184,7 +229,7 @@ Build a modern, responsive task management application that allows users to crea
                 </button>
               </div>
               <p className="text-gray-600 text-center mb-6">Paste or type your Product Requirements Document directly</p>
-              
+
               <textarea
                 value={prdContent}
                 onChange={(e) => setPrdContent(e.target.value)}
@@ -208,7 +253,7 @@ Build a task management application...
 - Real-time updates"
                 className="w-full h-64 p-4 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
-              
+
               {prdContent.trim() && (
                 <div className="mt-4 text-center">
                   <button
@@ -225,12 +270,72 @@ Build a task management application...
           </div>
         )}
 
-        {/* Loading Section */}
+        {/* Enhanced Loading Section */}
         {isLoading && (
-          <div className="text-center py-16">
-            <Loader2 className="w-16 h-16 animate-spin mx-auto mb-4" />
-            <p className="text-xl mb-2">Generating your prototype...</p>
-            <p className="text-gray-600">This may take a few moments</p>
+          <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
+            <div className="text-center max-w-md mx-auto px-6">
+              {/* Animated Logo/Icon */}
+              <div className="relative mb-8">
+                <div className="w-20 h-20 mx-auto relative">
+                  {/* Outer rotating ring */}
+                  <div className="absolute inset-0 border-4 border-blue-200 rounded-full animate-spin"></div>
+                  {/* Inner pulsing circle */}
+                  <div className="absolute inset-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">AI</span>
+                  </div>
+                  {/* Floating particles */}
+                  <div className="absolute -top-2 -right-2 w-3 h-3 bg-yellow-400 rounded-full animate-bounce"></div>
+                  <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-green-400 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="absolute top-1/2 -right-4 w-2 h-2 bg-pink-400 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+                </div>
+              </div>
+
+              {/* Dynamic Loading Text */}
+              <div className="mb-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 animate-pulse">
+                  Creating Magic ✨
+                </h2>
+                <div className="h-8 flex items-center justify-center">
+                  <p className="text-lg sm:text-xl text-gray-600 font-medium transition-all duration-500 ease-in-out transform">
+                    {loadingSteps[loadingStep]?.text || "🚀 Launching your prototype..."}
+                  </p>
+                </div>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="mb-6">
+                <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-all duration-1000 ease-out"
+                    style={{
+                      width: `${((loadingStep + 1) / loadingSteps.length) * 100}%`,
+                      boxShadow: '0 0 10px rgba(59, 130, 246, 0.5)'
+                    }}
+                  ></div>
+                </div>
+                <p className="text-sm text-gray-500 mt-2">
+                  {Math.round(((loadingStep + 1) / loadingSteps.length) * 100)}% Complete
+                </p>
+              </div>
+
+              {/* Fun Facts */}
+              <div className="bg-white/70 backdrop-blur-sm rounded-lg p-4 border border-white/50">
+                <p className="text-sm text-gray-600 italic">
+                  {loadingStep < 2 && "💡 Did you know? Our AI analyzes thousands of design patterns to create your perfect prototype!"}
+                  {loadingStep >= 2 && loadingStep < 4 && "🎨 Fun fact: We're using advanced algorithms to ensure your prototype follows modern UX principles!"}
+                  {loadingStep >= 4 && loadingStep < 6 && "📱 Almost there! We're making sure your prototype works beautifully on all devices!"}
+                  {loadingStep >= 6 && "🎉 Final touches being applied! Your prototype will be ready in seconds!"}
+                </p>
+              </div>
+
+              {/* Floating Animation Elements */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping" style={{ animationDelay: '0s' }}></div>
+                <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-1/2 left-1/6 w-1 h-1 bg-green-400 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute top-1/3 right-1/6 w-1 h-1 bg-yellow-400 rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
+              </div>
+            </div>
           </div>
         )}
 
@@ -261,6 +366,8 @@ Build a task management application...
                   ref={iframeRef}
                   className="w-full h-full border-none bg-white min-h-[600px] rounded"
                   title="Generated Prototype"
+                  srcDoc={generatedHTML || '<html><body><p>Loading prototype...</p></body></html>'}
+                  sandbox="allow-scripts allow-same-origin"
                 />
               </div>
             </div>
