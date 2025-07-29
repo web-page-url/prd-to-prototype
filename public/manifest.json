@@ -1,0 +1,27 @@
+{
+  "name": "PRD to Prototype - Transform Requirements into Working Prototypes",
+  "short_name": "PRD to Prototype",
+  "description": "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered tool that transforms ideas into interactive prototypes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/prd-to-product-1.0.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/prd-to-product-1.0.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "productivity", "developer"],
+  "lang": "en",
+  "dir": "ltr"
+}

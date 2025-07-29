@@ -1,8 +1,10 @@
 'use client';
 import { useState, useRef } from 'react';
-import { Download, Loader2, AlertCircle } from 'lucide-react';
-import { generateContent } from '@/lib/gemini';
+import { Download, AlertCircle } from 'lucide-react';
+import { generateContent } from '@/lib/ai';
 import DotGrid from '@/components/DotGrid';
+import ThemeToggleButton from '@/components/ui/theme-toggle-button';
+import ClientOnly from '@/components/ClientOnly';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -88,7 +90,7 @@ Generate the complete HTML prototype now:`;
 
     } catch (error) {
       console.error('Error:', error);
-      setError('Error generating prototype. Please check your API key and try again.');
+      setError('Error generating prototype. Please check your AI API key and try again.');
     } finally {
       clearInterval(stepInterval);
       setIsLoading(false);
@@ -148,27 +150,41 @@ Generate the complete HTML prototype now:`;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 text-black flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-blue-900 dark:to-purple-900 text-gray-900 dark:text-gray-100 flex flex-col relative overflow-hidden transition-all duration-500">
       {/* Interactive Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="fixed inset-0 z-0">
         <DotGrid
-          dotSize={6}
-          gap={25}
-          baseColor="#e2e8f0"
-          activeColor="#3b82f6"
-          proximity={100}
-          shockRadius={150}
-          shockStrength={3}
-          resistance={500}
-          returnDuration={1.0}
-          className="w-full h-full opacity-60"
+          dotSize={8}
+          gap={35}
+          baseColor="#475569"
+          activeColor="#1d4ed8"
+          proximity={120}
+          shockRadius={180}
+          shockStrength={4}
+          resistance={400}
+          returnDuration={1.2}
+          className="w-full h-full opacity-90 dark:opacity-50"
         />
       </div>
 
       {/* Header */}
-      <header className="relative z-10 p-8 text-center border-b border-white/20 backdrop-blur-sm bg-white/10">
-        <h1 className="text-4xl font-bold mb-2 text-gray-800">PRD to Prototype</h1>
-        <p className="text-gray-700 text-lg">
+      <header className="relative z-10 p-8 text-center border-b border-white/20 dark:border-gray-700/20 backdrop-blur-sm bg-white/10 dark:bg-black/10">
+        <div className="flex justify-between items-start mb-4">
+          <div className="flex-1"></div>
+          <div className="flex-1">
+            <h1 className="text-4xl font-bold mb-2 text-gray-900 dark:text-gray-100">PRD to Prototype</h1>
+          </div>
+          <div className="flex-1 flex justify-end items-center gap-4">
+            <ClientOnly fallback={<div className="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-800 animate-pulse mt-2" />}>
+              <ThemeToggleButton 
+                variant="circle-blur" 
+                start="center"
+                className="mt-2"
+              />
+            </ClientOnly>
+          </div>
+        </div>
+        <p className="text-gray-800 dark:text-gray-200 text-lg">
           Transform your Product Requirements Document into a working prototype
         </p>
       </header>
@@ -180,9 +196,9 @@ Generate the complete HTML prototype now:`;
         {!isLoading && !showPreview && (
           <div className="space-y-8">
             {/* Text Input Option */}
-            <div className="bg-white/70 backdrop-blur-md border-2 border-white/30 rounded-xl p-8 shadow-xl">
+            <div className="bg-white/70 dark:bg-black/30 backdrop-blur-md border-2 border-white/30 dark:border-gray-700/30 rounded-xl p-8 shadow-xl">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-2xl font-semibold">Enter Your PRD Text</h2>
+                <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">Enter Your PRD Text</h2>
                 <button
                   onClick={() => setPrdContent(`# Task Management Application - PRD
 
@@ -240,12 +256,12 @@ Build a modern, responsive task management application that allows users to crea
 - User engagement time
 - Mobile usage percentage
 - User satisfaction score`)}
-                  className="text-sm bg-gray-200 text-gray-700 px-3 py-1 rounded hover:bg-gray-300 transition-colors"
+                  className="text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                 >
                   Load Sample PRD
                 </button>
               </div>
-              <p className="text-gray-600 text-center mb-6">Paste or type your Product Requirements Document directly</p>
+              <p className="text-gray-600 dark:text-gray-400 text-center mb-6">Paste or type your Product Requirements Document directly</p>
 
               <textarea
                 value={prdContent}
@@ -268,14 +284,14 @@ Build a task management application...
 - Responsive design
 - Modern UI/UX
 - Real-time updates"
-                className="w-full h-64 p-4 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full h-64 p-4 border border-gray-300 dark:border-gray-600 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/50 dark:bg-black/20 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
               />
 
               {prdContent.trim() && (
                 <div className="mt-4 text-center">
                   <button
                     onClick={generatePrototype}
-                    className="bg-blue-600 text-white px-8 py-3 rounded hover:bg-blue-700 transition-colors"
+                    className="bg-blue-600 dark:bg-blue-700 text-white px-8 py-3 rounded hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
                   >
                     Generate Prototype
                   </button>
@@ -290,7 +306,7 @@ Build a task management application...
         {/* Enhanced Loading Section */}
         {isLoading && (
           <div className="min-h-screen flex items-center justify-center">
-            <div className="text-center max-w-md mx-auto px-6 bg-white/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/30">
+            <div className="text-center max-w-md mx-auto px-6 bg-white/80 dark:bg-black/40 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/30 dark:border-gray-700/30">
               {/* Animated Logo/Icon */}
               <div className="relative mb-8">
                 <div className="w-20 h-20 mx-auto relative">
@@ -309,11 +325,11 @@ Build a task management application...
 
               {/* Dynamic Loading Text */}
               <div className="mb-6">
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 animate-pulse">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3 animate-pulse">
                   Creating Magic ✨
                 </h2>
                 <div className="h-8 flex items-center justify-center">
-                  <p className="text-lg sm:text-xl text-gray-600 font-medium transition-all duration-500 ease-in-out transform">
+                  <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-medium transition-all duration-500 ease-in-out transform">
                     {loadingSteps[loadingStep]?.text || "🚀 Launching your prototype..."}
                   </p>
                 </div>
@@ -407,6 +423,14 @@ Build a task management application...
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <footer className="relative z-10 mt-auto py-6 text-center border-t border-white/20 dark:border-gray-700/20 backdrop-blur-sm bg-white/5 dark:bg-black/5">
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          Created with <span className="text-red-500 animate-pulse">💖</span> by{' '}
+          <span className="font-semibold text-gray-800 dark:text-gray-200">Anubhav</span>
+        </p>
+      </footer>
     </div>
   );
 }

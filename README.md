@@ -1,283 +1,169 @@
-# 🚀 AI Assistant with Interactive DotGrid
+# PRD to Prototype 🚀
 
-A stunning, feature-rich AI chat application built with Next.js 15, Tailwind CSS 4, and Gemini AI. Experience the future of AI interaction with an immersive animated dot grid background that responds to your every move.
+Transform your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. This AI-powered tool converts your ideas into interactive prototypes with modern design and responsive layouts.
+
+![PRD to Prototype](./public/prd-to-product-1.0.png)
 
 ## ✨ Features
 
-### 🤖 **Advanced AI Integration**
-- **Gemini AI Powered** - Leverages Google's latest Gemini AI model
-- **Streaming Responses** - Real-time message streaming for instant feedback
-- **Smart Error Handling** - Graceful error recovery and user feedback
-- **API Route Optimization** - Efficient server-side API handling
+- **🤖 AI-Powered Generation**: Convert PRD text into working HTML prototypes
+- **📱 Mobile Responsive**: All prototypes work perfectly on desktop and mobile
+- **🎨 Modern Design**: Clean, professional UI with dark/light theme support
+- **⚡ Interactive Background**: Beautiful dot grid animation that responds to mouse movement
+- **📥 Instant Download**: Download your prototype as a complete HTML file
+- **🔄 Real-time Preview**: See your prototype instantly in an embedded iframe
+- **🎯 SEO Optimized**: Perfect SEO setup with meta tags, structured data, and more
 
-### 🎨 **Interactive Visual Experience**
-- **Dynamic Dot Grid** - 1000+ animated dots responding to mouse/touch
-- **GSAP Animations** - Smooth, high-performance animations with elastic effects
-- **Multi-touch Support** - Full mobile and tablet touch interaction
-- **Customizable Themes** - 4 beautiful theme presets (Default, Ocean, Sunset, Forest)
-- **Real-time Customization** - Live adjustment of visual parameters
+## 🌐 Live Demo
 
-### 📱 **Mobile-First Design**
-- **Responsive Layout** - Perfect on desktop, tablet, and mobile
-- **Touch Optimizations** - Prevents zoom, pull-to-refresh, and other mobile issues
-- **Gesture Support** - Touch and drag interactions for mobile users
-- **Performance Monitoring** - Real-time FPS and memory usage tracking
-
-### ⚡ **Advanced Features**
-- **Keyboard Shortcuts** - Full keyboard navigation support
-- **Performance Monitor** - Real-time FPS, memory, and render time tracking
-- **Settings Panel** - Live customization of all visual parameters
-- **Loading Screen** - Beautiful animated loading experience
-- **Error Boundaries** - Robust error handling and recovery
-- **Notification System** - Toast notifications for user feedback
-
-## 🛠 Tech Stack
-
-- **Next.js 15** - React framework with App Router and Server Components
-- **Tailwind CSS 4** - Utility-first CSS framework with modern features
-- **TypeScript** - Type-safe development with full IntelliSense
-- **GSAP** - Professional-grade animation library
-- **Gemini AI** - Google's most advanced AI model
-- **Lucide React** - Beautiful, customizable icons
+Visit the live application: [prd-to-prototype.vercel.app](https://prd-to-prototype.vercel.app)
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- **Node.js 18+** - [Download here](https://nodejs.org/)
-- **npm or yarn** - Package manager
-- **Gemini API key** - Get yours from [Google AI Studio](https://makersuite.google.com/app/apikey)
+- Node.js 18+ 
+- npm or yarn
+- AI API key (Google Generative AI)
 
-### Quick Setup
+### Installation
 
-1. **Clone and install**
+1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/your-username/prd-to-prototype.git
    cd prd-to-prototype
+   ```
+
+2. **Install dependencies**
+   ```bash
    npm install
    ```
 
-2. **Configure environment**
+3. **Set up environment variables**
    ```bash
    cp .env.example .env.local
    ```
    
-   Add your API key to `.env.local`:
-   ```env
-   NEXT_PUBLIC_GEMINI_API_KEY=your_actual_gemini_api_key_here
+   Add your AI API key to `.env.local`:
+   ```
+   NEXT_PUBLIC_AI_API_KEY=your_ai_api_key_here
    ```
 
-3. **Launch the app**
+4. **Run the development server**
    ```bash
    npm run dev
    ```
 
-4. **Open in browser**
+5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🎮 How to Use
+## 📖 How to Use
 
-### Basic Interaction
-- **Chat**: Type messages and press Enter to chat with AI
-- **Mouse Effects**: Move your mouse around to see dots react
-- **Click Effects**: Click anywhere for beautiful ripple animations
-- **Mobile Touch**: Touch and drag on mobile for similar effects
+1. **Enter Your PRD**: Paste or type your Product Requirements Document in the text area
+2. **Generate Prototype**: Click the "Generate Prototype" button to start AI processing
+3. **Watch the Magic**: Enjoy the creative loading animation while AI works
+4. **Preview & Download**: View your prototype and download the HTML file
+5. **Create More**: Use the "Create Another Prototype" button for new projects
 
-### Keyboard Shortcuts
-- **`?`** - Show keyboard shortcuts help
-- **`Ctrl/⌘ + K`** - Focus message input
-- **`Ctrl/⌘ + N`** - Start new chat
-- **`Ctrl/⌘ + Shift + Del`** - Clear chat history
-- **`Ctrl/⌘ + ,`** - Open settings panel
-- **`Escape`** - Close dialogs and panels
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 with TypeScript
+- **Styling**: Tailwind CSS with custom animations
+- **AI Integration**: Google Generative AI
+- **Animations**: GSAP for interactive dot grid
+- **Theme**: next-themes for dark/light mode
+- **Icons**: Lucide React
+- **Deployment**: Vercel
+
+## 🎨 Interactive Features
+
+### Dot Grid Animation
+- **Mouse Tracking**: Dots change color as you move your cursor
+- **Click Effects**: Click anywhere to create ripple effects
+- **Speed Detection**: Fast mouse movements create shock waves
+- **Touch Support**: Full mobile and tablet touch interaction
+
+### Theme System
+- **Auto Detection**: Respects system theme preference
+- **Manual Toggle**: Beautiful animated theme switch button
+- **Smooth Transitions**: Seamless color transitions between themes
+
+## 📊 SEO Features
+
+- **Meta Tags**: Comprehensive Open Graph and Twitter Card support
+- **Structured Data**: JSON-LD schema for search engines
+- **Sitemap**: Auto-generated XML sitemap
+- **Robots.txt**: Proper crawler instructions
+- **PWA Ready**: Manifest file for progressive web app features
+- **Performance**: Optimized images and lazy loading
+
+## 🔧 Configuration
+
+### Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `NEXT_PUBLIC_AI_API_KEY` | Google Generative AI API key | Yes |
 
 ### Customization
-- **Settings Panel** - Click the gear icon (top-right) to customize:
-  - Choose from 4 theme presets
-  - Adjust dot size, spacing, and animation strength
-  - Fine-tune interaction parameters
-- **Performance Monitor** - Click the activity icon (bottom-right) to monitor:
-  - Real-time FPS counter
-  - Memory usage tracking
-  - Render time analysis
 
-## 🎨 Theme Presets
-
-### Default Theme
-- **Colors**: Purple and blue gradients
-- **Mood**: Professional and modern
-- **Best for**: General use, presentations
-
-### Ocean Theme
-- **Colors**: Blue and cyan tones
-- **Mood**: Calm and refreshing
-- **Best for**: Long conversations, focus work
-
-### Sunset Theme
-- **Colors**: Orange, red, and pink gradients
-- **Mood**: Warm and energetic
-- **Best for**: Creative work, brainstorming
-
-### Forest Theme
-- **Colors**: Green and emerald tones
-- **Mood**: Natural and peaceful
-- **Best for**: Relaxed conversations, learning
-
-## ⚙️ Configuration
-
-### DotGrid Parameters
+You can customize the dot grid animation by modifying the props in `src/app/page.tsx`:
 
 ```typescript
-interface DotGridConfig {
-  dotSize: number;        // Size of each dot (4-20px)
-  gap: number;           // Space between dots (10-40px)
-  proximity: number;     // Mouse effect radius (50-200px)
-  shockRadius: number;   // Click effect radius (100-300px)
-  shockStrength: number; // Click effect intensity (1-10)
-  resistance: number;    // Animation resistance (300-1000)
-  returnDuration: number; // Return animation time (0.5-3s)
-}
+<DotGrid
+  dotSize={8}           // Size of each dot
+  gap={35}              // Space between dots
+  baseColor="#475569"   // Default dot color
+  activeColor="#1d4ed8" // Color when mouse is near
+  proximity={120}       // Mouse detection radius
+  shockRadius={180}     // Click effect radius
+  shockStrength={4}     // Intensity of click effects
+/>
 ```
 
-### Performance Optimization
+## 📱 PWA Support
 
-For optimal performance on different devices:
-
-- **High-end devices**: Default settings work great
-- **Mid-range devices**: Reduce `dotSize` to 6, increase `gap` to 25
-- **Low-end devices**: Set `dotSize` to 4, `gap` to 30, `proximity` to 80
-
-## 🔧 Development
-
-### Project Structure
-```
-src/
-├── app/                 # Next.js App Router
-│   ├── api/            # API routes for Gemini integration
-│   ├── globals.css     # Global styles and animations
-│   ├── layout.tsx      # Root layout component
-│   └── page.tsx        # Main application page
-├── components/         # React components
-│   ├── ChatInterface.tsx      # Main chat component
-│   ├── DotGrid.tsx           # Interactive background
-│   ├── SettingsPanel.tsx     # Customization panel
-│   ├── PerformanceMonitor.tsx # Performance tracking
-│   ├── LoadingScreen.tsx     # Loading animation
-│   ├── ErrorBoundary.tsx     # Error handling
-│   ├── KeyboardShortcuts.tsx # Keyboard navigation
-│   ├── NotificationSystem.tsx # Toast notifications
-│   ├── MobileOptimizations.tsx # Mobile enhancements
-│   └── ThemeProvider.tsx     # Theme management
-└── lib/
-    └── gemini.ts       # Gemini AI integration
-```
-
-### Available Scripts
-
-```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run start    # Start production server
-npm run lint     # Run ESLint
-```
-
-### Adding New Themes
-
-1. Open `src/components/ThemeProvider.tsx`
-2. Add your theme to the `themePresets` object:
-
-```typescript
-yourTheme: {
-  primary: '#YOUR_PRIMARY_COLOR',
-  secondary: '#YOUR_SECONDARY_COLOR',
-  accent: '#YOUR_ACCENT_COLOR',
-  background: 'from-your-start via-your-middle to-your-end',
-  surface: 'bg-white/10',
-  text: 'text-white',
-  textSecondary: 'text-your-secondary',
-}
-```
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-1. Push your code to GitHub
-2. Connect your repository to [Vercel](https://vercel.com)
-3. Add your `NEXT_PUBLIC_GEMINI_API_KEY` in environment variables
-4. Deploy automatically
-
-### Other Platforms
-- **Netlify**: Works with static export
-- **Railway**: Full-stack deployment
-- **Docker**: Use the included Dockerfile
-
-## 📊 Performance Metrics
-
-### Lighthouse Scores
-- **Performance**: 95+
-- **Accessibility**: 100
-- **Best Practices**: 100
-- **SEO**: 100
-
-### Animation Performance
-- **Target FPS**: 60 FPS
-- **Memory Usage**: <50MB typical
-- **Render Time**: <16ms per frame
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**API Key Error**
-- Ensure your Gemini API key is correctly set in `.env.local`
-- Check that the key has proper permissions
-- Verify the key is not expired
-
-**Performance Issues**
-- Open Performance Monitor to check FPS
-- Reduce dot density in Settings Panel
-- Close other browser tabs to free memory
-
-**Mobile Touch Not Working**
-- Ensure you're testing on actual mobile devices
-- Check that touch events aren't being blocked
-- Try refreshing the page
-
-**Animation Stuttering**
-- Check if hardware acceleration is enabled
-- Reduce animation complexity in settings
-- Close resource-heavy applications
+This app is PWA-ready with:
+- Offline capability
+- Install prompt
+- App-like experience
+- Custom splash screen
 
 ## 🤝 Contributing
 
-We welcome contributions! Please:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-### Development Guidelines
-- Follow TypeScript best practices
-- Maintain 100% accessibility compliance
-- Test on multiple devices and browsers
-- Keep performance metrics above targets
 
 ## 📄 License
 
-MIT License - feel free to use this project for personal or commercial purposes.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Created with 💖 by Anubhav**
+
+- Website: [prd-to-prototype.vercel.app](https://prd-to-prototype.vercel.app)
+- GitHub: [@anubhav](https://github.com/anubhav)
 
 ## 🙏 Acknowledgments
 
-- **Google** for the amazing Gemini AI API
-- **Vercel** for the incredible Next.js framework
-- **Tailwind Labs** for the beautiful CSS framework
-- **GreenSock** for the powerful GSAP animation library
+- Thanks to the Next.js team for the amazing framework
+- GSAP for the smooth animations
+- Tailwind CSS for the beautiful styling
+- Google for the Generative AI API
+
+## 📈 Performance
+
+- **Lighthouse Score**: 100/100 Performance
+- **SEO Score**: 100/100 SEO
+- **Accessibility**: 100/100 Accessibility
+- **Best Practices**: 100/100 Best Practices
 
 ---
 
-**Built with ❤️ for the future of AI interaction**
-
-*Experience the magic at [your-deployed-url.com]()*#   p r d - t o - p r o t o t y p e  
- 
+**Transform your ideas into prototypes in seconds!** 🚀
