@@ -1,6 +1,6 @@
 # PRD to Prototype 🚀
 
-Transform your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. This AI-powered tool converts your ideas into interactive prototypes with modern design and responsive layouts.
+Transform your Product Requirements Document (PRD) into a fully functional prototype instantly. This AI-powered tool converts your ideas into interactive prototypes with modern design and responsive layouts.
 
 ![PRD to Prototype](./public/prd-to-product-1.0.png)
 

@@ -10,7 +10,7 @@ interface SEOProps {
 
 export default function SEO({
   title = "PRD to Prototype - Transform Requirements into Working Prototypes",
-  description = "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts.",
+  description = "Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts.",
   image = "/prd-to-product-1.0.png",
   url = "https://prd-to-prototype.vercel.app",
   type = "website"

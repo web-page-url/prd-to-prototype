@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "PRD to Prototype - Transform Requirements into Working Prototypes",
-  description: "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts.",
+  description: "Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts.",
   keywords: [
     "PRD to prototype",
     "product requirements document",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "PRD to Prototype - Transform Requirements into Working Prototypes",
-    description: "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts.",
+    description: "Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts.",
     url: "https://prd-to-prototype.vercel.app",
     siteName: "PRD to Prototype",
     images: [
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "PRD to Prototype - Transform Requirements into Working Prototypes",
-    description: "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered prototyping tool created by Anubhav.",
+    description: "Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered prototyping tool created by Anubhav.",
     images: ["https://prd-to-prototype.vercel.app/prd-to-product-1.0.png"],
     creator: "@anubhav",
     site: "@anubhav",
@@ -111,7 +111,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "PRD to Prototype",
-    "description": "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered tool that transforms ideas into interactive prototypes.",
+    "description": "Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered tool that transforms ideas into interactive prototypes.",
     "url": "https://prd-to-prototype.vercel.app",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web Browser",
@@ -151,7 +151,7 @@ export default function RootLayout({
         
         {/* Enhanced Open Graph Tags for Facebook, Instagram, WhatsApp */}
         <meta property="og:title" content="PRD to Prototype - Transform Requirements into Working Prototypes" />
-        <meta property="og:description" content="Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts." />
+        <meta property="og:description" content="Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts." />
         <meta property="og:image" content="https://prd-to-prototype.vercel.app/prd-to-product-1.0.png" />
         <meta property="og:image:secure_url" content="https://prd-to-prototype.vercel.app/prd-to-product-1.0.png" />
         <meta property="og:image:width" content="1200" />
@@ -169,7 +169,7 @@ export default function RootLayout({
         <meta name="twitter:site" content="@anubhav" />
         <meta name="twitter:creator" content="@anubhav" />
         <meta name="twitter:title" content="PRD to Prototype - Transform Requirements into Working Prototypes" />
-        <meta name="twitter:description" content="Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered prototyping tool created by Anubhav." />
+        <meta name="twitter:description" content="Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered prototyping tool created by Anubhav." />
         <meta name="twitter:image" content="https://prd-to-prototype.vercel.app/prd-to-product-1.0.png" />
         <meta name="twitter:image:alt" content="PRD to Prototype - AI-powered tool to transform Product Requirements Documents into working HTML prototypes" />
         <meta name="twitter:domain" content="prd-to-prototype.vercel.app" />
