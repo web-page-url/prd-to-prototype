@@ -42,26 +42,36 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "PRD to Prototype - Transform Requirements into Working Prototypes",
-    description: "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered tool that transforms ideas into interactive prototypes.",
+    description: "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts.",
     url: "https://prd-to-prototype.vercel.app",
     siteName: "PRD to Prototype",
     images: [
       {
-        url: "/prd-to-product-1.0.png",
+        url: "https://prd-to-prototype.vercel.app/prd-to-product-1.0.png",
         width: 1200,
         height: 630,
+        alt: "PRD to Prototype - AI-powered tool to transform Product Requirements Documents into working HTML prototypes",
+        type: "image/png",
+      },
+      {
+        url: "https://prd-to-prototype.vercel.app/prd-to-product-1.0.png",
+        width: 800,
+        height: 600,
         alt: "PRD to Prototype - Transform Requirements into Working Prototypes",
+        type: "image/png",
       },
     ],
     locale: "en_US",
     type: "website",
+    countryName: "United States",
   },
   twitter: {
     card: "summary_large_image",
     title: "PRD to Prototype - Transform Requirements into Working Prototypes",
-    description: "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered prototyping tool.",
-    images: ["/prd-to-product-1.0.png"],
+    description: "Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered prototyping tool created by Anubhav.",
+    images: ["https://prd-to-prototype.vercel.app/prd-to-product-1.0.png"],
     creator: "@anubhav",
+    site: "@anubhav",
   },
   robots: {
     index: true,
@@ -127,13 +137,80 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Structured Data for Search Engines */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        
+        {/* Basic Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#3b82f6" />
+        <meta name="msapplication-TileColor" content="#3b82f6" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        
+        {/* Enhanced Open Graph Tags for Facebook, Instagram, WhatsApp */}
+        <meta property="og:title" content="PRD to Prototype - Transform Requirements into Working Prototypes" />
+        <meta property="og:description" content="Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts." />
+        <meta property="og:image" content="https://prd-to-prototype.vercel.app/prd-to-product-1.0.png" />
+        <meta property="og:image:secure_url" content="https://prd-to-prototype.vercel.app/prd-to-product-1.0.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="PRD to Prototype - AI-powered tool to transform Product Requirements Documents into working HTML prototypes" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:url" content="https://prd-to-prototype.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="PRD to Prototype" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:updated_time" content="2025-01-29T00:00:00Z" />
+        
+        {/* Enhanced Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@anubhav" />
+        <meta name="twitter:creator" content="@anubhav" />
+        <meta name="twitter:title" content="PRD to Prototype - Transform Requirements into Working Prototypes" />
+        <meta name="twitter:description" content="Convert your Product Requirements Document (PRD) into a fully functional HTML prototype instantly. AI-powered prototyping tool created by Anubhav." />
+        <meta name="twitter:image" content="https://prd-to-prototype.vercel.app/prd-to-product-1.0.png" />
+        <meta name="twitter:image:alt" content="PRD to Prototype - AI-powered tool to transform Product Requirements Documents into working HTML prototypes" />
+        <meta name="twitter:domain" content="prd-to-prototype.vercel.app" />
+        
+        {/* LinkedIn Specific Tags */}
+        <meta property="article:author" content="Anubhav" />
+        <meta property="article:published_time" content="2025-01-29T00:00:00Z" />
+        <meta property="article:section" content="Technology" />
+        <meta property="article:tag" content="PRD, Prototype, AI, Product Design, Web Development" />
+        
+        {/* WhatsApp Optimization (uses Open Graph) */}
+        <meta property="og:rich_attachment" content="true" />
+        
+        {/* Additional Social Media Tags */}
+        <meta name="pinterest-rich-pin" content="true" />
+        <meta name="application-name" content="PRD to Prototype" />
+        <meta name="apple-mobile-web-app-title" content="PRD to Prototype" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        
+        {/* Favicon and Icons */}
+        <link rel="icon" type="image/png" href="/prd-to-product-1.0.png" />
+        <link rel="shortcut icon" href="/prd-to-product-1.0.png" />
+        <link rel="apple-touch-icon" href="/prd-to-product-1.0.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/prd-to-product-1.0.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/prd-to-product-1.0.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/prd-to-product-1.0.png" />
+        
+        {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
+        
+        {/* Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* DNS Prefetch */}
+        <link rel="dns-prefetch" href="//vercel.app" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://prd-to-prototype.vercel.app" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

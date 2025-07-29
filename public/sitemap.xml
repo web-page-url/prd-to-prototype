@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://prd-to-prototype.vercel.app/</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://prd-to-prototype.vercel.app/prd-to-product-1.0.png</image:loc>
+      <image:title>PRD to Prototype - Transform Requirements into Working Prototypes</image:title>
+      <image:caption>AI-powered tool to transform Product Requirements Documents into working HTML prototypes. Created by Anubhav.</image:caption>
+    </image:image>
   </url>
 </urlset>

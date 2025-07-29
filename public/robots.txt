@@ -4,13 +4,43 @@ Allow: /
 # Sitemap
 Sitemap: https://prd-to-prototype.vercel.app/sitemap.xml
 
-# Crawl-delay
+# Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Disallow specific paths (if any)
-# Disallow: /api/
-# Disallow: /_next/
+# Disallow unnecessary paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /_vercel/
+Disallow: /node_modules/
 
-# Allow important resources
+# Allow important SEO resources
 Allow: /prd-to-product-1.0.png
 Allow: /manifest.json
+Allow: /favicon.ico
+Allow: /browserconfig.xml
+
+# Social media crawlers
+User-agent: facebookexternalhit/*
+Allow: /
+Allow: /prd-to-product-1.0.png
+
+User-agent: Twitterbot
+Allow: /
+Allow: /prd-to-product-1.0.png
+
+User-agent: LinkedInBot
+Allow: /
+Allow: /prd-to-product-1.0.png
+
+User-agent: WhatsApp
+Allow: /
+Allow: /prd-to-product-1.0.png
+
+# Search engine specific instructions
+User-agent: Googlebot
+Allow: /
+Allow: /prd-to-product-1.0.png
+
+User-agent: Bingbot
+Allow: /
+Allow: /prd-to-product-1.0.png
