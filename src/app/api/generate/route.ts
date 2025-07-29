@@ -1,4 +1,5 @@
-import { generateContent } from '@/lib/gemini';
+// import { generateContent } from '@/lib/gemini';
+import { generateContent, generateStreamContent } from '@/lib/ai';
 import { NextRequest } from 'next/server';
 
 export async function POST(request: NextRequest) {
