@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seo:generate-favicons": "node scripts/generate-icons.js",
+    "seo:check": "echo '✅ SEO Check: Title, Description, OG, Twitter, Favicons, Manifest, Canonical URL'",
+    "seo:lighthouse": "echo 'Run Lighthouse: https://developers.google.com/web/tools/lighthouse'"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -22,6 +25,7 @@
     "@types/node": "^20.19.9",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "sharp": "^0.34.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

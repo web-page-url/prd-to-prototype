@@ -45,19 +45,12 @@ export const metadata: Metadata = {
     description: "Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts.",
     url: "https://prd-to-prototype.vercel.app",
     siteName: "PRD to Prototype",
-    images: [
+        images: [
       {
-        url: "https://prd-to-prototype.vercel.app/prd-to-product-1.0.png",
+        url: "https://prd-to-prototype.vercel.app/og-image-1200x630.png",
         width: 1200,
         height: 630,
         alt: "PRD to Prototype - AI-powered tool to transform Product Requirements Documents into working HTML prototypes",
-        type: "image/png",
-      },
-      {
-        url: "https://prd-to-prototype.vercel.app/prd-to-product-1.0.png",
-        width: 800,
-        height: 600,
-        alt: "PRD to Prototype - Transform Requirements into Working Prototypes",
         type: "image/png",
       },
     ],
@@ -69,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PRD to Prototype - Transform Requirements into Working Prototypes",
     description: "Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered prototyping tool created by Anubhav.",
-    images: ["https://prd-to-prototype.vercel.app/prd-to-product-1.0.png"],
+    images: ["https://prd-to-prototype.vercel.app/twitter-image-1200x600.png"],
     creator: "@anubhav",
     site: "@anubhav",
   },
@@ -96,9 +89,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/prd-to-product-1.0.png",
-    shortcut: "/prd-to-product-1.0.png",
-    apple: "/prd-to-product-1.0.png",
+    icon: "/prd-to-product-2.0.png",
+    shortcut: "/prd-to-product-2.0.png",
+    apple: "/prd-to-product-2.0.png",
   },
 };
 
@@ -152,8 +145,8 @@ export default function RootLayout({
         {/* Enhanced Open Graph Tags for Facebook, Instagram, WhatsApp */}
         <meta property="og:title" content="PRD to Prototype - Transform Requirements into Working Prototypes" />
         <meta property="og:description" content="Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered tool that transforms ideas into interactive prototypes with modern design and responsive layouts." />
-        <meta property="og:image" content="https://prd-to-prototype.vercel.app/prd-to-product-1.0.png" />
-        <meta property="og:image:secure_url" content="https://prd-to-prototype.vercel.app/prd-to-product-1.0.png" />
+        <meta property="og:image" content="https://prd-to-prototype.vercel.app/og-image-1200x630.png" />
+        <meta property="og:image:secure_url" content="https://prd-to-prototype.vercel.app/og-image-1200x630.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="PRD to Prototype - AI-powered tool to transform Product Requirements Documents into working HTML prototypes" />
@@ -170,7 +163,7 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@anubhav" />
         <meta name="twitter:title" content="PRD to Prototype - Transform Requirements into Working Prototypes" />
         <meta name="twitter:description" content="Convert your Product Requirements Document (PRD) into a fully functional prototype instantly. AI-powered prototyping tool created by Anubhav." />
-        <meta name="twitter:image" content="https://prd-to-prototype.vercel.app/prd-to-product-1.0.png" />
+        <meta name="twitter:image" content="https://prd-to-prototype.vercel.app/twitter-image-1200x600.png" />
         <meta name="twitter:image:alt" content="PRD to Prototype - AI-powered tool to transform Product Requirements Documents into working HTML prototypes" />
         <meta name="twitter:domain" content="prd-to-prototype.vercel.app" />
         
@@ -190,13 +183,29 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         
-        {/* Favicon and Icons */}
-        <link rel="icon" type="image/png" href="/prd-to-product-1.0.png" />
-        <link rel="shortcut icon" href="/prd-to-product-1.0.png" />
-        <link rel="apple-touch-icon" href="/prd-to-product-1.0.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/prd-to-product-1.0.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/prd-to-product-1.0.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/prd-to-product-1.0.png" />
+        {/* Favicon and Icons - Multi-Platform Support */}
+        {/* Standard Favicon */}
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+        {/* Apple Touch Icons */}
+        <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+
+        {/* Android/Chrome Icons */}
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+
+        {/* Microsoft Tiles */}
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+        <meta name="msapplication-TileColor" content="#3b82f6" />
+
+        {/* Legacy support */}
+        <link rel="shortcut icon" href="/favicon.ico" />
         
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
